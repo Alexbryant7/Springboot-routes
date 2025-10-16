@@ -7,12 +7,18 @@
 </head>
 <body>
     <h1>Agregar Estudiantes</h1>
+
     <form th:action="@{/agregar}" th:object="${student}" method="post">
+     
         Nombre: <input type="text" th:field="*{name}" required>
         Edad: <input type="number" th:field="*{age}" required>
         Email: <input type="text" th:field="*{email}" required>
+        Direccion: <input type="text" th:field="*{dir}" required>
+        Celular: <input type="number" th:field="*{cel}" required>
+       
         <button type="submit">Agregar estudiante</button>
     </form>
+
     <h1>Lista de Estudiantes</h1>
     <table>
         <thead>
@@ -20,6 +26,8 @@
                 <th>Nombre</th>
                 <th>Edad</th>
                 <th>Email</th>
+                <th>Direccion</th>
+                <th>Celular</th>
             </tr>
         </thead>
         <tbody>
@@ -27,6 +35,8 @@
                 <td th:text="${student.name}"></td>
                 <td th:text="${student.age}"></td>
                 <td th:text="${student.email}"></td>
+                <td th:text="${student.dir}"></td>
+                <td th:text="${student.cel}"></td>
             </tr>
         </tbody>
     </table>
